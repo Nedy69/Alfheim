@@ -8,14 +8,38 @@
         x:Class="Alfheim.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
         Title="Alfheim"
-        Background="#333333"
-        Foreground="White">
-       
+        TransparencyLevelHint="AcrylicBlur"
+        Background="Transparent"
+        ExtendClientAreaToDecorationsHint="True"
+        CornerRadius="25">
         
+        <Design.DataContext>
+                <vm:MainViewModel/>
+        </Design.DataContext>
+        
+        <Panel>
+                
+                <ExperimentalAcrylicBorder IsHitTestVisible="True">
+                        <ExperimentalAcrylicBorder.Material>
+                                <ExperimentalAcrylicMaterial
+                                        BackgroundSource="Digger"
+                                        TintColor="Black"
+                                        TintOpacity="1"
+                                        MaterialOpacity="0.7" />
+                        </ExperimentalAcrylicBorder.Material>
+                </ExperimentalAcrylicBorder>
+                <StackPanel Orientation="Vertical">
+                
+                        <views:ListBox/>
+                        <views:MainView/>
+                </StackPanel>
+        </Panel>
+        <!--
         <StackPanel Orientation="Vertical">
+                
                 <views:ListBox/>
                 <views:MainView/>
         </StackPanel>
-        
+        -->
         
 </Window>
