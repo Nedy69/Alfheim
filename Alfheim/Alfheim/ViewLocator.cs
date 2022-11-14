@@ -19,7 +19,7 @@ namespace Alfheim
             {
                 return (Control)Activator.CreateInstance(type)!;
             }
-            
+
             return new TextBlock { Text = name };
         }
 

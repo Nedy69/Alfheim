@@ -1,0 +1,30 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Alfheim.Views.USB"
+             Background="#333333"
+             Foreground="White">
+    
+    <StackPanel Orientation="Vertical" Spacing="10">
+        <Label FontSize="30" HorizontalAlignment="Center">Communication</Label>
+        <Grid Margin="25,25,25,25" RowDefinitions="*,*" ColumnDefinitions="*,*,*,*,*">
+
+            <Label Grid.Column="0" Grid.Row="0">
+                Serial Port:
+            </Label>
+            <Label Grid.Column="0" Grid.Row="1">
+                Baud rate:
+            </Label>
+            <ListBox Grid.Row="0" Grid.Column="1"></ListBox>
+            <ListBox Grid.Row="1" Grid.Column="1"></ListBox>
+            <Button Grid.Row="0" Grid.Column="2"></Button>
+            <Label Grid.Row="0" Grid.Column="3">Status:</Label>
+            <Label Grid.Row="0" Grid.Column="4" Background="Red">Disconnected</Label>
+            <Button Grid.Row="1" Grid.Column="4"></Button>
+
+        </Grid>
+    </StackPanel>
+    
+</UserControl>

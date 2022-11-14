@@ -1,0 +1,102 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Alfheim.Views.ListBox"
+             Background="#333333"
+             Foreground="White">
+    
+    
+    <TabControl>
+        <TabItem Header="USB">
+            <StackPanel Orientation="Vertical" Spacing="10">
+                <Label FontSize="30" HorizontalAlignment="Center">Communication</Label>
+                <Grid Margin="25,25,25,25" RowDefinitions="*,*" ColumnDefinitions="*,*,*,*,*">
+
+                    <Label Grid.Column="0" Grid.Row="0">
+                        Serial Port:
+                    </Label>
+                    <Label Grid.Column="0" Grid.Row="1">
+                        Baud rate:
+                    </Label>
+                    <ListBox Grid.Row="0" Grid.Column="1"></ListBox>
+                    <ListBox Grid.Row="1" Grid.Column="1"></ListBox>
+                    <Button Grid.Row="0" Grid.Column="2"></Button>
+                    <Label Grid.Row="0" Grid.Column="3">Status:</Label>
+                    <Label Grid.Row="0" Grid.Column="4" Background="Red">Disconnected</Label>
+                    <Button Grid.Row="1" Grid.Column="4"></Button>
+
+                </Grid>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="Home">
+            <Grid Margin="10,15,10,15" RowDefinitions="*,*,*" ColumnDefinitions="*">
+                <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" FontSize="30">Home</Label>
+                <Grid ColumnDefinitions="*,*,*" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center">
+                    <Button Grid.Column="0" Margin="5">Home</Button>
+                    <Button Grid.Column="1" Margin="5">Zero position</Button>
+                    <Button Grid.Column="2" Margin="5">Kill alarm lock</Button>
+                </Grid>
+                <Grid ColumnDefinitions="*,*,*,*" Grid.Column="0" Grid.Row="2">
+                    <RadioButton Grid.Column="0">G0 move</RadioButton>
+                    <RadioButton Grid.Column="1">G1 move</RadioButton>
+                    <Label VerticalContentAlignment="Center" Grid.Column="2">Feed rate</Label>
+                    <NumericUpDown Grid.Column="3"></NumericUpDown>
+                </Grid>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Gripper">
+            <Grid RowDefinitions="*,*,*,*,*" Margin="20" VerticalAlignment="Center">
+                <Label Grid.Row="0" FontSize="30" HorizontalAlignment="Center" Margin="5">Gripper</Label>
+                <NumericUpDown Grid.Row="1"></NumericUpDown>
+                <Slider Grid.Row="2" Margin="10,30" TickFrequency="1" IsSnapToTickEnabled="True"></Slider>
+                <Grid Grid.Row="3" ColumnDefinitions="*,*,*,*" HorizontalAlignment="Center" Margin="10">
+                    <Button Grid.Column="0" Margin="10" MinHeight="50">-10%</Button>
+                    <Button Grid.Column="1" Margin="10" MinHeight="50">-1%</Button>
+                    <Button Grid.Column="2" Margin="10" MinHeight="50">+1%</Button>
+                    <Button Grid.Column="3" Margin="10" MinHeight="50">+10%</Button>
+                </Grid>
+                <Button Grid.Row="4" Margin="5" MinHeight="50">Go!!!</Button>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Inverse Kinematic">
+            <Grid RowDefinitions="*,*,*" Margin="5" VerticalAlignment="Center">
+            <Label Grid.Row="0" HorizontalAlignment="Center" FontSize="30">Move</Label>
+            <Grid Grid.Row="1" ColumnDefinitions="*,*,*" Margin="1" HorizontalAlignment="Center">
+                <Grid RowDefinitions="*,*" Grid.Column="0" Margin="5" MinHeight="100">
+                    <Button Grid.Row="0" VerticalAlignment="Top" MinHeight="40" Margin="1">Z+</Button>
+                    <Button Grid.Row="1" VerticalAlignment="Bottom" MinHeight="40" Margin="1">Z-</Button>
+                </Grid>
+                <Grid Grid.Column="1" ColumnDefinitions="*,*,*" RowDefinitions="*,*,*" Margin="5" MinHeight="100" HorizontalAlignment="Center">
+                    <Button Grid.Row="1" Grid.Column="0" Margin="2" MinHeight="30">X-</Button>
+                    <Button Grid.Row="0" Grid.Column="1" Margin="2" MinHeight="30">Y+</Button>
+                    <Button Grid.Row="2" Grid.Column="1" Margin="2" MinHeight="30">Y-</Button>
+                    <Button Grid.Row="1" Grid.Column="2" Margin="2" MinHeight="30">X+</Button>
+                </Grid>
+                <Grid RowDefinitions="*,*,*" Grid.Column="2" Margin="5" VerticalAlignment="Center" MinHeight="140">
+                    <Grid Grid.Row="0" ColumnDefinitions="*,*" Margin="5">
+                        <Button Grid.Column="0" Margin="2">x10</Button>
+                        <Button Grid.Column="1" Margin="2">+</Button>
+                    </Grid>
+                    <NumericUpDown Grid.Row="1"></NumericUpDown>
+                    <Grid ColumnDefinitions="*,*" Grid.Row="2" Margin="5">
+                        <Button Grid.Column="0" Margin="2">/10</Button>
+                        <Button Grid.Column="1" Margin="2">-</Button>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid ColumnDefinitions="*,*,*,*,*,*" Grid.Row="2" Margin="5" HorizontalAlignment="Center" MinHeight="80" VerticalAlignment="Center">
+                <Label Grid.Column="0" Margin="5" VerticalAlignment="Center">X:</Label>
+                <NumericUpDown Grid.Column="1" Margin="5" VerticalAlignment="Center"></NumericUpDown>
+                <Label Grid.Column="2" Margin="5" VerticalAlignment="Center">Y:</Label>
+                <NumericUpDown Grid.Column="3" Margin="5" VerticalAlignment="Center"></NumericUpDown>
+                <Label Grid.Column="4" Margin="5" VerticalAlignment="Center">Z:</Label>
+                <NumericUpDown Grid.Column="5" Margin="5" VerticalAlignment="Center"></NumericUpDown>
+            </Grid>
+        </Grid>
+        </TabItem>
+        <TabItem Header="Scripting"></TabItem>
+    </TabControl>
+    
+</UserControl>
