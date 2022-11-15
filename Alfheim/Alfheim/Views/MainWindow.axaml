@@ -11,17 +11,17 @@
         TransparencyLevelHint="AcrylicBlur"
         Background="Transparent"
         Opacity="0.7"
-        ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaToDecorationsHint="False"
         ExtendClientAreaChromeHints="NoChrome"
-        IsHitTestVisible="False"
+        IsHitTestVisible="True"
         CanResize="True"
         CornerRadius="25">
         
         <Design.DataContext>
                 <vm:MainViewModel/>
         </Design.DataContext>
-        <Grid RowDefinitions="*">
-                <ExperimentalAcrylicBorder Grid.Row="0" IsHitTestVisible="True">
+        <Panel>
+                <ExperimentalAcrylicBorder IsHitTestVisible="True">
                         <ExperimentalAcrylicBorder.Material>
                                 <ExperimentalAcrylicMaterial
                                         BackgroundSource="Digger"
@@ -30,11 +30,11 @@
                                         MaterialOpacity="0.7" />
                         </ExperimentalAcrylicBorder.Material>
                 </ExperimentalAcrylicBorder>
-                <StackPanel Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Left">
-                                <views:ListBox/>
-                                <views:MainView/>
-                </StackPanel>
-        </Grid>
+                <Grid RowDefinitions="Auto,*" HorizontalAlignment="Stretch">
+                        <views:MenuBarTop Grid.Row="0"></views:MenuBarTop>
+                        <views:ListBox Grid.Row="1"></views:ListBox>
+                </Grid>
+        </Panel>
         <!--
         <StackPanel Orientation="Vertical">
                 
