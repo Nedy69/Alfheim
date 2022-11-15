@@ -10,16 +10,18 @@
         Title="Alfheim"
         TransparencyLevelHint="AcrylicBlur"
         Background="Transparent"
+        Opacity="0.7"
         ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaChromeHints="NoChrome"
+        IsHitTestVisible="False"
+        CanResize="True"
         CornerRadius="25">
         
         <Design.DataContext>
                 <vm:MainViewModel/>
         </Design.DataContext>
-        
-        <Panel>
-                
-                <ExperimentalAcrylicBorder IsHitTestVisible="True">
+        <Grid RowDefinitions="*">
+                <ExperimentalAcrylicBorder Grid.Row="0" IsHitTestVisible="True">
                         <ExperimentalAcrylicBorder.Material>
                                 <ExperimentalAcrylicMaterial
                                         BackgroundSource="Digger"
@@ -28,12 +30,11 @@
                                         MaterialOpacity="0.7" />
                         </ExperimentalAcrylicBorder.Material>
                 </ExperimentalAcrylicBorder>
-                <StackPanel Orientation="Vertical">
-                
-                        <views:ListBox/>
-                        <views:MainView/>
+                <StackPanel Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Left">
+                                <views:ListBox/>
+                                <views:MainView/>
                 </StackPanel>
-        </Panel>
+        </Grid>
         <!--
         <StackPanel Orientation="Vertical">
                 
