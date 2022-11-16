@@ -13,11 +13,21 @@ public class ArticulationControl: UserControl
         AvaloniaProperty.RegisterDirect<ArticulationControl, double>(nameof(Value), articulation => articulation.Value,
             (articulation, v) => articulation.Value = v, defaultBindingMode: BindingMode.TwoWay,
             enableDataValidation: true);
+    public static readonly DirectProperty<ArticulationControl,string> TextProperty =
+        AvaloniaProperty.RegisterDirect<ArticulationControl, string>(nameof(Text), articulation => articulation.Text,
+            (articulation, v) => articulation.Text = v, defaultBindingMode: BindingMode.TwoWay,
+            enableDataValidation: true);
     private double _value;
     public double Value
     {
         get => _value;
         set => SetAndRaise(ValueProperty,ref _value, value);
+    }
+    private string _text;
+    public string Text
+    {
+        get => _text;
+        set => SetAndRaise(TextProperty,ref _text, value);
     }
 
     private void Plus(double value) => Value += value;

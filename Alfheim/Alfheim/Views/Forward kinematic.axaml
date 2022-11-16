@@ -12,12 +12,12 @@
         CornerRadius="25"
         Padding="4">
         <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" Margin="25">
-            <views:Articulation Grid.Row="0"></views:Articulation>
-            <views:Articulation Grid.Row="1"></views:Articulation>
-            <views:Articulation Grid.Row="2"></views:Articulation>
-            <views:Articulation Grid.Row="3"></views:Articulation>
-            <views:Articulation Grid.Row="4"></views:Articulation>
-            <views:Articulation Grid.Row="5"></views:Articulation>
+            <views:Articulation Grid.Row="0" Text="Art 1"></views:Articulation>
+            <views:Articulation Grid.Row="1" Text="Art 2"></views:Articulation>
+            <views:Articulation Grid.Row="2" Text="Art 3"></views:Articulation>
+            <views:Articulation Grid.Row="3" Text="Art 4"></views:Articulation>
+            <views:Articulation Grid.Row="4" Text="Art 5"></views:Articulation>
+            <views:Articulation Grid.Row="5" Text="Art 6"></views:Articulation>
             <Button Grid.Row="6" HorizontalAlignment="Center" Margin="10">Go ALL!!!</Button>
         </Grid>
     </Border>

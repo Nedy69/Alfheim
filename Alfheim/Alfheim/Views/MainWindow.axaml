@@ -14,6 +14,7 @@
         ExtendClientAreaToDecorationsHint="False"
         ExtendClientAreaChromeHints="NoChrome"
         IsHitTestVisible="True"
+        SizeToContent="WidthAndHeight"
         CanResize="True"
         CornerRadius="25">
         
@@ -34,7 +35,9 @@
                         <views:MenuBarTop Grid.Row="0" Margin="0,0,0,5"></views:MenuBarTop>
                         <Grid Grid.Row="1" ColumnDefinitions="Auto,Auto">
                                 <views:ListBox Grid.Column="0"></views:ListBox>
-                                <Expander Grid.Column="1" ExpandDirection="Right" Background="Transparent"></Expander>
+                                <Expander Grid.Column="1" ExpandDirection="Right" Background="Transparent">
+                                        <views:Scripting></views:Scripting>
+                                </Expander>
                         </Grid>
                 </Grid>
         </Panel>
