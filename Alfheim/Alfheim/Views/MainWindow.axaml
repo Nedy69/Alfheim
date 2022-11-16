@@ -31,8 +31,11 @@
                         </ExperimentalAcrylicBorder.Material>
                 </ExperimentalAcrylicBorder>
                 <Grid RowDefinitions="Auto,*" HorizontalAlignment="Stretch">
-                        <views:MenuBarTop Grid.Row="0"></views:MenuBarTop>
-                        <views:ListBox Grid.Row="1"></views:ListBox>
+                        <views:MenuBarTop Grid.Row="0" Margin="0,0,0,5"></views:MenuBarTop>
+                        <Grid Grid.Row="1" ColumnDefinitions="Auto,Auto">
+                                <views:ListBox Grid.Column="0"></views:ListBox>
+                                <Expander Grid.Column="1" ExpandDirection="Right" Background="Transparent"></Expander>
+                        </Grid>
                 </Grid>
         </Panel>
         <!--

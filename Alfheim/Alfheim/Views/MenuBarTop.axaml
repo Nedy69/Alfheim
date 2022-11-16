@@ -5,12 +5,12 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="50"
              x:Class="Alfheim.Views.MenuBarTop">
     <UniformGrid Background="Transparent" Rows="1" Columns="8" HorizontalAlignment="Stretch">
-        <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Background="Transparent">Home</Button>
-        <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Background="Transparent">Zero pos</Button>
-        <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Background="Transparent">Kill Alarm Lock</Button>
-        <ToggleSwitch HorizontalAlignment="Center" OnContent="G0" OffContent="G1" Background="Transparent"></ToggleSwitch>
+        <Button CornerRadius="0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Background="Transparent">Home</Button>
+        <Button CornerRadius="0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Background="Transparent">Zero pos</Button>
+        <Button CornerRadius="0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Background="Transparent">Kill Alarm Lock</Button>
+        <ToggleSwitch HorizontalAlignment="Center" OnContent="Rapid" OffContent="Linear" Background="Transparent"></ToggleSwitch>
         <Label HorizontalAlignment="Right" VerticalAlignment="Center" Background="Transparent">Feed Rate:</Label>
-        <NumericUpDown Background="Transparent"> </NumericUpDown>
+        <NumericUpDown Background="Transparent" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"> </NumericUpDown>
         <Label HorizontalAlignment="Right" VerticalAlignment="Center" Background="Transparent"> Status:</Label>
         <Rectangle HorizontalAlignment="Center" Fill="Red" Height="30" Width="60"></Rectangle>
     </UniformGrid>
