@@ -14,20 +14,20 @@ public class ArticulationControl: UserControl
             (articulation, v) => articulation.Value = v, defaultBindingMode: BindingMode.TwoWay,
             enableDataValidation: true);
     public static readonly DirectProperty<ArticulationControl,string> TextProperty =
-        AvaloniaProperty.RegisterDirect<ArticulationControl, string>(nameof(Text), articulation => articulation.Text,
+        AvaloniaProperty.RegisterDirect<ArticulationControl, string>(nameof(Text), articulation => articulation.Text!,
             (articulation, v) => articulation.Text = v, defaultBindingMode: BindingMode.TwoWay,
             enableDataValidation: true);
-    private double _value;
+    private double _value = 50;
     public double Value
     {
         get => _value;
         set => SetAndRaise(ValueProperty,ref _value, value);
     }
-    private string _text;
-    public string Text
+    private string? _text;
+    public string? Text
     {
         get => _text;
-        set => SetAndRaise(TextProperty,ref _text, value);
+        set => SetAndRaise(TextProperty!,ref _text, value);
     }
 
     private void Plus(double value) => Value += value;
@@ -40,6 +40,8 @@ public class ArticulationControl: UserControl
     public ICommand ClickMinus10 { get; set; }
     public ICommand ClickMinus1 { get; set; }
     public ICommand ClickMinus01 { get; set; }
+    
+    
 
     protected ArticulationControl()
     {
@@ -48,12 +50,12 @@ public class ArticulationControl: UserControl
         ClickPlus01 = new PlusCommand( _=>Can(0.1),_=>Plus(0.1));
         ClickMinus10 = new PlusCommand( _=>Can(-10),_=>Plus(-10));
         ClickMinus1 = new PlusCommand( _=>Can(-1),_=>Plus(-1));
-        ClickMinus01 = new PlusCommand( _=>Can(-0.1),_=>Plus(-0.1));
+        ClickMinus01 = new PlusCommand(_ => Can(-0.1), _ => Plus(-0.1));
     }
 }
 
 
-public class PlusCommand : ICommand
+public sealed class PlusCommand : ICommand
 {
     private readonly Predicate<object> _canExecute;
     private readonly Action<object> _execute;
@@ -72,14 +74,14 @@ public class PlusCommand : ICommand
 
     private event EventHandler? CanExecuteChangeValue;
 
-    public bool CanExecute(object parameter) => _canExecute?.Invoke(parameter) ?? true;
+    public bool CanExecute(object? parameter) => _canExecute(parameter!);
 
-    public void Execute(object parameter)
+    public void Execute(object? parameter)
     {
-        _execute.Invoke(parameter);
+        _execute.Invoke(parameter!);
     }
 
-    protected virtual void OnCanExecuteChangeValue()
+    private void OnCanExecuteChangeValue()
     {
         CanExecuteChangeValue?.Invoke(this, EventArgs.Empty);
     }

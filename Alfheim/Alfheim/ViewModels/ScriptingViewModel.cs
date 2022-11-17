@@ -1,4 +1,7 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using Alfheim.Infrastructure;
 
 namespace Alfheim.ViewModels;
@@ -6,6 +9,7 @@ namespace Alfheim.ViewModels;
 public class ScriptingViewModel : ViewModelBase
 {
     public ObservableCollection<PnCode> PnCodes { get; } = new();
+    public double Height { get; set; } = 50;
 
     public ScriptingViewModel()
     {

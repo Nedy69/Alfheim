@@ -3,13 +3,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:models="clr-namespace:Alfheim.ViewModels"
+             x:Name="Script"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="Alfheim.Views.Scripting" MinWidth="300" MinHeight="300">
+             x:Class="Alfheim.Views.Scripting" MinWidth="300" MinHeight="300" Height="{Binding Path=Height, Mode=OneWayToSource}">
     <UserControl.DataContext>
         <models:ScriptingViewModel></models:ScriptingViewModel>
     </UserControl.DataContext>
     <Grid RowDefinitions="*" ColumnDefinitions="*">
-        <DataGrid Items="{Binding PnCodes}" AutoGenerateColumns="True" CanUserReorderColumns="False" CanUserSortColumns="False" VerticalAlignment="Stretch"></DataGrid>
+        <DataGrid Items="{Binding PnCodes}" AutoGenerateColumns="True" CanUserReorderColumns="False"
+                  CanUserSortColumns="False" Height="{Binding Path=Height, FallbackValue=50}">
+        </DataGrid>
     </Grid>
     
 </UserControl>
