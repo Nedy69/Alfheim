@@ -7,18 +7,21 @@
              xmlns:controls="clr-namespace:Alfheim.Controls"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Alfheim.Views.ForwardKinematic">
+    <UserControl.DataContext>
+        <models:ArmViewModel></models:ArmViewModel>
+    </UserControl.DataContext>
     <Border
         Background="Transparent"
         CornerRadius="25"
         Padding="4">
         <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" Margin="25">
-            <views:Articulation Grid.Row="0" Text="Art 1"></views:Articulation>
-            <views:Articulation Grid.Row="1" Text="Art 2"></views:Articulation>
-            <views:Articulation Grid.Row="2" Text="Art 3"></views:Articulation>
-            <views:Articulation Grid.Row="3" Text="Art 4"></views:Articulation>
-            <views:Articulation Grid.Row="4" Text="Art 5"></views:Articulation>
-            <views:Articulation Grid.Row="5" Text="Art 6"></views:Articulation>
-            <Button Grid.Row="6" HorizontalAlignment="Center" Margin="10">Go ALL!!!</Button>
+            <views:Articulation Grid.Row="0" Text="Art 1" Value="{Binding Service.Wanted.Q1 , FallbackValue=0}"></views:Articulation>
+            <views:Articulation Grid.Row="1" Text="Art 2" Value="{Binding Service.Wanted.Q2 , FallbackValue=0}"></views:Articulation>
+            <views:Articulation Grid.Row="2" Text="Art 3" Value="{Binding Service.Wanted.Q3 , FallbackValue=0}"></views:Articulation>
+            <views:Articulation Grid.Row="3" Text="Art 4" Value="{Binding Service.Wanted.Q4 , FallbackValue=0}"></views:Articulation>
+            <views:Articulation Grid.Row="4" Text="Art 5" Value="{Binding Service.Wanted.Q5 , FallbackValue=0}"></views:Articulation>
+            <views:Articulation Grid.Row="5" Text="Art 6" Value="{Binding Service.Wanted.Q6 , FallbackValue=0}"></views:Articulation>
+            <Button Grid.Row="6" HorizontalAlignment="Center" Margin="10" Command="{Binding GoAll}">Go ALL!!!</Button>
         </Grid>
     </Border>
 </UserControl>
